@@ -28,6 +28,8 @@ Class Board
    End Sub
 
    Public Function CheckWinner() As Boolean
+
+      ' Horizontal win conditons check
       For i As Integer = 0 To 2
          If board(0, i) <> " " AndAlso
          board(0, i) = board(1, i) AndAlso
@@ -35,6 +37,8 @@ Class Board
             Return True
          End If
       Next
+
+      ' Vertical win conditions check
       For i As Integer = 0 To 2
          If board(i, 0) <> " " AndAlso
          board(i, 0) = board(i, 1) AndAlso
@@ -42,6 +46,8 @@ Class Board
             Return True 
          End If
       Next
+
+      ' Diagonal win conditions checks
       If board(0, 0 ) <> " "
       AndAlso board(0, 0) = board(1, 1)
       AndAlso board(1, 1) = board(2, 2) Then
@@ -55,13 +61,17 @@ Class Board
       
       Return False
    End Function
+
+   Private Function CheckDraw() As Boolean
+      If 
+   End Function
     
-	Private Sub SetBoard(choice as Char, xpos As Integer, ypos As Integer)
-		board(xpos, ypos) = choice 
-	End Sub
+   Private Sub SetBoard(choice as Char, xpos As Integer, ypos As Integer)
+      board(xpos, ypos) = choice 
+   End Sub
 	
-	Function GetBoard(xpos As Integer, ypos as Integer)
-		Return board(xpos, ypos)
-	End Function
+   Function GetBoard(xpos As Integer, ypos as Integer)
+      Return board(xpos, ypos)
+   End Function
 	
 End Class
