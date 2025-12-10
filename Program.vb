@@ -15,13 +15,16 @@ Sub Main(args As String())
       Dim yPos1 = move1.Item2
       gameBoard.MakeMove(TestPlayer, xPos1, yPos1)
       gameBoard.DrawBoard()
+      gameBoard.CheckWinner()
+      gameBoard.CheckDraw()
       
       Dim move2 = playerAI.ChooseMove(gameBoard)
       Dim xPos2 = move2.Item1
       Dim yPos2 = move2.Item2
       gameBoard.MakeMove(playerAI, xPos2, yPos2)
       gameBoard.DrawBoard()
-
+      gameBoard.CheckWinner()
+      gameBoard.CheckDraw()
 
       index += 1
    

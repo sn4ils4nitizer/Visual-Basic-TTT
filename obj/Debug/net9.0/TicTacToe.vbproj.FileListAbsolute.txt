@@ -26,3 +26,4 @@
 /home/oboramedia/Documents/TicTacToe/bin/Debug/net9.0/TicTacToe.pdb
 /home/oboramedia/Documents/TicTacToe/obj/Debug/net9.0/TicTacToe.genruntimeconfig.cache
 /home/oboramedia/Documents/TicTacToe/obj/Debug/net9.0/ref/TicTacToe.dll
+/home/oboramedia/Documents/TicTacToe/obj/Debug/net9.0/TicTacToe.sourcelink.json
