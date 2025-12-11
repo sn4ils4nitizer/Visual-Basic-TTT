@@ -69,14 +69,14 @@ Class Board
    Public Function CheckDraw() As Boolean
       For i As Integer = 0 To 2
          For j As Integer = 0 To 2
-            If board(i, j) <> " "
+            If board(i, j) =" "
             Console.WriteLine("DEBUG: There is no draw")
-            Return True
+            Return False
             End If
          Next
       Next
-      Console.WriteLine("DEBUG: There is no draw")
-      Return False
+      Console.WriteLine("DEBUG: There is a draw")
+      Return True
    End Function
     
    Private Sub SetBoard(choice as Char, xpos As Integer, ypos As Integer)
