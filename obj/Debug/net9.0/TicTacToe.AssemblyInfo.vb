@@ -15,7 +15,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("TicTacToe"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+378b48e5390b1c919eb2ead2342942222e6678da"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0fe8334ca2e1e0456bd1f72ea7d452f282060ea"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("TicTacToe"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("TicTacToe"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")> 

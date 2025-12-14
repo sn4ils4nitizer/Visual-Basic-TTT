@@ -24,7 +24,7 @@ Class GameController
          End If
          If board.CheckDraw() = True Then
             Console.WriteLine("It is a draw!")
-            Rerturn Nothing
+            Return Nothing
          End If
 
          MakeMove(player2)
@@ -35,7 +35,7 @@ Class GameController
             Return player2
          End If
          If board.CheckDraw() = True Then
-            Cnsole.WriteLine("It is a draw!")
+            Console.WriteLine("It is a draw!")
             Return Nothing
          End If
          
@@ -43,7 +43,7 @@ Class GameController
    End Function
    
    Sub MakeMove(player As Player)
-      Dim move = player.ChoseMove(board)
+      Dim move = player.ChooseMove(board)
       Dim xPos = move.Item1
       Dim yPos = move.Item2
       board.MakeMove(player, xPos, yPos)
