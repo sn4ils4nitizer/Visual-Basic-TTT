@@ -12,9 +12,35 @@ Class GameController
       board = New Board()
    End Sub
 
-   Sub RunGame()
-      
-   End Sub
+   Function RunGame() As Player
+      board.DrawBoard()
+      While True
+         MakeMove(player1)
+         Console.Clear()
+         board.DrawBoard()
+         If board.CheckWinner() = True Then
+            Console.WriteLine(player1.GetPlayerName() + " has won!")
+            Return player1
+         End If
+         If board.CheckDraw() = True Then
+            Console.WriteLine("It is a draw!")
+            Rerturn Nothing
+         End If
+
+         MakeMove(player2)
+         Console.Clear()
+         board.DrawBoard()
+         If board.CheckWinner() = True Then
+            Console.WriteLine(player2.GetPlayerName() + " has won!")
+            Return player2
+         End If
+         If board.CheckDraw() = True Then
+            Cnsole.WriteLine("It is a draw!")
+            Return Nothing
+         End If
+         
+      End While
+   End Function
    
    Sub MakeMove(player As Player)
       Dim move = player.ChoseMove(board)
