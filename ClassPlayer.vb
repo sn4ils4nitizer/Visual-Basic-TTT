@@ -1,4 +1,5 @@
 Imports System
+Imports System.Text.RegularExpressions
 
 Class Player
    Private Property isAI As Boolean
@@ -60,12 +61,16 @@ Class Player
       Return symbol
    End Function
 
-   Public Function CreateNewPlayer(playerName As String, playerSymbol As Char) As Player
-      If Regex.IsMatch(playerName, "^[A-Za-z]+$") AndAlso
-      playerSymbol = "O" OR playerSymbol = "X" Then
+   Public Shared Function CreateNewPlayer(playerSymbol As Char) As Player
+   Console.WriteLine("Please enter player name:")
+   Dim playerName = Console.ReadLine()
+   If Regex.IsMatch(playerName, "^[A-Za-z]+$") AndAlso
+      playerSymbol = "O" OrElse playerSymbol = "X" Then
          Return New Player(False, playerName, playerSymbol)
-      Else
-         Return Nothing
+Else
+   Console.WriteLine("Please enter a valid name. The name may contain only alpha characters.")
+   CreateNewPlayer(playerSymbol)
+         ' Return Nothing
       End If
    End Function
    
