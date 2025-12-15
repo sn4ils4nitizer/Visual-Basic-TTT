@@ -69,9 +69,8 @@ Class Player
          Console.WriteLine("Please enter a valid name. The name can only consists of alpha characters.")
       Else
          Return New Player(playerName, playerSymbol)
-         End While
       End If
-      While
+      End While
 End Function
    
    Public Shared Function CreateNewPlayer(playerSymbol As Char) As Player
