@@ -59,5 +59,14 @@ Class Player
    Public Function GetSymbol
       Return symbol
    End Function
+
+   Public Function CreateNewPlayer(playerName As String, playerSymbol As Char)
+      If playerName = "[A-Za-z]+" AndAlso
+      playerSymbol = "O" OR "X" Then
+         Return New Player(False, playerName, Char)
+      Else
+         Return Nothing
+      End If
+   End Function
    
 End Class
