@@ -65,12 +65,13 @@ Class Player
    Console.WriteLine("Please enter player Name:")
    While True
    Dim playerName = Console.ReadLine().Trim()
-      If Not Regex.IsMatch(playerName, "^[A-Za-z]+$")
-      Console.WriteLine("Please enter a valid name. The name can only consists of alpha characters.")
-End If
-Else Return False
-   While
-    Return New Player(playerName, playerSymbol)
+      If Not Regex.IsMatch(playerName, "^[A-Za-z]+$") Then
+         Console.WriteLine("Please enter a valid name. The name can only consists of alpha characters.")
+      Else
+         Return New Player(playerName, playerSymbol)
+         End While
+      End If
+      While
 End Function
    
    Public Shared Function CreateNewPlayer(playerSymbol As Char) As Player
