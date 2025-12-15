@@ -60,10 +60,10 @@ Class Player
       Return symbol
    End Function
 
-   Public Function CreateNewPlayer(playerName As String, playerSymbol As Char)
-      If playerName = "[A-Za-z]+" AndAlso
-      playerSymbol = "O" OR "X" Then
-         Return New Player(False, playerName, Char)
+   Public Function CreateNewPlayer(playerName As String, playerSymbol As Char) As Player
+      If Regex.IsMatch(playerName, "^[A-Za-z]+$") AndAlso
+      playerSymbol = "O" OR playerSymbol = "X" Then
+         Return New Player(False, playerName, playerSymbol)
       Else
          Return Nothing
       End If
