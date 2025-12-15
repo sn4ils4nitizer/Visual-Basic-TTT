@@ -45,7 +45,7 @@ Sub Main(args As String())
    
    ' Loop Until index = 3
  
-   Dim player1 = Player.CreateNewPlayer("Fufacz", "X")
+   Dim player1 = Player.CreateNewPlayer("X")
    Dim player2 As New Player(True, "Computer", "O")
    Dim game As New GameController(player1, player2)
    game.RunGame()

@@ -61,15 +61,28 @@ Class Player
       Return symbol
    End Function
 
+   Public Shared Function GenerateNewPlayer(playerSymbol As Char) As Player
+   Console.WriteLine("Please enter player Name:")
+   While True
+   Dim playerName = Console.ReadLine().Trim()
+      If Not Regex.IsMatch(playerName, "^[A-Za-z]+$")
+      Console.WriteLine("Please enter a valid name. The name can only consists of alpha characters.")
+End If
+Else Return False
+   While
+    Return New Player(playerName, playerSymbol)
+End Function
+   
    Public Shared Function CreateNewPlayer(playerSymbol As Char) As Player
    Console.WriteLine("Please enter player name:")
    Dim playerName = Console.ReadLine()
+   playerName = playerName.Trim()
    If Regex.IsMatch(playerName, "^[A-Za-z]+$") AndAlso
       playerSymbol = "O" OrElse playerSymbol = "X" Then
          Return New Player(False, playerName, playerSymbol)
 Else
    Console.WriteLine("Please enter a valid name. The name may contain only alpha characters.")
-   CreateNewPlayer(playerSymbol)
+   Return CreateNewPlayer(playerSymbol)
          ' Return Nothing
       End If
    End Function
