@@ -28,10 +28,10 @@ Class Player
       Do
          Do
          Console.Write("Please enter an X coordinate (0-2):" + Environment.NewLine)
-         Loop Until Integer.TryParse(Console.ReadLine(), xPos) AndAlso xPos >= 0 AndAlso xPos <= 2
+         Loop Until Integer.TryParse(Console.ReadLine(), yPos) AndAlso yPos >= 0 AndAlso xPos <= 2
          Do
          Console.Write("Please enter a Y coordinate (0-2):" + Environment.NewLine)
-         Loop Until Integer.TryParse(Console.ReadLine(), yPos) AndAlso yPos >= 0 AndAlso yPos <= 2
+         Loop Until Integer.TryParse(Console.ReadLine(), xPos) AndAlso xPos >= 0 AndAlso yPos <= 2
       Loop While board.GetBoard(xPos, yPos) <> " "
 
       Return (xPos, yPos)

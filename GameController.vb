@@ -15,6 +15,7 @@ Class GameController
    Function RunGame() As Player
       board.DrawBoard()
       While True
+         Console.Write("It's " + player1.GetPlayerName() +"'s turn. ")
          MakeMove(player1)
          Console.Clear()
          board.DrawBoard()
@@ -27,6 +28,9 @@ Class GameController
             Return Nothing
          End If
 
+         If player2.GetAI = False Then
+            Console.Write("It's " + player2.GetPlayerName() + "'s turn. ")
+         End If
          MakeMove(player2)
          Console.Clear()
          board.DrawBoard()
