@@ -1,4 +1,5 @@
 Imports System
+Imports System.Text.RegularExpressions
 
 Module Program
 Sub Main(args As String())
@@ -44,9 +45,33 @@ Sub Main(args As String())
    ' index += 1
    
    ' Loop Until index = 3
- 
-   Dim player1 = Player.GenerateNewPlayer("X")
-   Dim player2 As New Player(True, "Computer", "O")
+   Dim player1 As Player
+   Dim player2 As Player
+   Dim playerChoice As String
+   ' Dim multiPlayer As Boolean
+   ' multiPlayer = False
+
+   Console.WriteLine("Welcome to Tic Tac Toe game.")
+   Console.WriteLine("Would you like to play against another player? (y/n)")
+   While True
+      playerChoice = Console.ReadLine().Trim()
+      If Not Regex.IsMatch(playerChoice, "^[YNyn]$") Then
+         Console.WriteLine("Please enter y for ""yes"" or n for ""no""")
+      End If
+      If playerChoice = "Y" OrElse "y" Then
+         player1 = Player.GenerateNewPlayer("X")
+         player2 = Player.GenerateNewPlayer("O")
+         Exit While
+      End If
+      If playerChoice = "N" OrElse "n" Then
+         player1 = Player.GenerateNewPlayer("X")
+         player2 = New Player(True, "Computer", "O")
+         Exit While
+      End If
+   End While
+   
+   ' Dim player1 = Player.GenerateNewPlayer("X")
+   ' Dim player2 As New Player(True, "Computer", "O")
    Dim game As New GameController(player1, player2)
    game.RunGame()
   
